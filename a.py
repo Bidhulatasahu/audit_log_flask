@@ -8,7 +8,7 @@ app = Flask(__name__)
 def api_root():
     return 'Welcome Guys'
 
-@app.rout('/github', methods=['POST'])
+@app.route('/github', methods=['POST'])
 def api_gh_message():
     if request.headers['Content-Type'] == 'application/json':
         my_info = json.dumps(request.json)
@@ -16,5 +16,5 @@ def api_gh_message():
         return my_info
 
 
-if __name__ = '__main__':
+if __name__ == '__main__':
     app.run(debug=True)
